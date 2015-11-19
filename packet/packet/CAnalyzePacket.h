@@ -21,7 +21,6 @@ public:
 
 	// 数据包分析
 	static void analyze(u_char* user, const struct pcap_pkthdr* pcap_head, const u_char* packet);
-
 };
 
 #endif /* CANALYZEPACKET_H_ */

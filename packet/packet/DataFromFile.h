@@ -1,13 +1,14 @@
-﻿#ifndef _DATAFROMFILE_H_
+﻿
+#ifndef _DATAFROMFILE_H_
 #define _DATAFROMFILE_H_
 
 
 #include <pcap/pcap.h>
-#include "Data.h"
+#include "DataCollection.h"
 #include "Comm.h"
 
 
-class CDataFromFile:public CData
+class CDataFromFile:public CDataCollection
 {
 public:
 

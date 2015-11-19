@@ -11,8 +11,6 @@
 #include <netinet/tcp.h>
 #include <arpa/inet.h>
 
-////
-
 CAnalyzePacket::CAnalyzePacket() {
 
 }
@@ -54,6 +52,7 @@ void CAnalyzePacket::analyze(u_char* user, const pcap_pkthdr* pcap_head, const u
 	packet->setIp(ip);
 	packet->setTcp(tcp);
 	packet->setPacketData(payload, pay_size);
+
 
 	printf("链路层\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
 	printf("源地址:%x:%x:%x:%x:%x:%x\n",

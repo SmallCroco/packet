@@ -7,14 +7,14 @@
 /*回调函数类型*/
 typedef void (*pPcapHandler_t)(u_char *, const struct pcap_pkthdr *, const u_char *);
 
-class CData
+class CDataCollection
 {
 public:
 	/*构造函数*/
-	CData();
+	CDataCollection();
 
 	/*虚析构函数*/
-	virtual ~CData(){};
+	virtual ~CDataCollection(){};
 
 	/*打开数据源，这里定义为一个纯虚函数，该函数将在其子类中实现*/
 	virtual int OpenDataOrigin(const char path[]) = 0;	
@@ -44,6 +44,7 @@ protected:
 
 	/*过滤器结构体*/
 	bpf_program m_bpf;
+
 	/*解析使用的回调函数指针*/
 	pPcapHandler_t pPcapHandler;
 };
@@ -52,7 +53,7 @@ protected:
  *函数参数：想要使用的回调函数
  *函数返回值：无
  */
-inline void CData::SetCall(pPcapHandler_t pCall)
+inline void CDataCollection::SetCall(pPcapHandler_t pCall)
 {
 	this->pPcapHandler = pCall;
 }

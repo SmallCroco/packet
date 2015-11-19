@@ -1,7 +1,7 @@
-﻿#include "Data.h"
+﻿#include "DataCollection.h"
 
-/*类CData的构造函数*/
-CData::CData()
+/*类CDataCollection的构造函数*/
+CDataCollection::CDataCollection()
 {
 	this->m_pHandle = NULL;
 	this->pPcapHandler = NULL;
@@ -11,7 +11,7 @@ CData::CData()
  *函数参数：设置过滤器使用的字符串
  *函数返回值：成功返回0， 失败返回-1
  */
-inline int CData::GetFilter(const char FiltratorStr[])
+inline int CDataCollection::GetFilter(const char FiltratorStr[])
 {
 	int ret = pcap_compile(this->m_pHandle, &(this->m_bpf), FiltratorStr, 1, 0);//构造过滤器
 	if(-1 == ret)
@@ -26,7 +26,7 @@ inline int CData::GetFilter(const char FiltratorStr[])
  *函数参数：无
  *函数返回值：成功返回0， 失败返回-1
  */
-inline int CData::SetFilter()
+inline int CDataCollection::SetFilter()
 {
 	int ret = pcap_setfilter(this->m_pHandle, &(this->m_bpf));				//设置过滤器
 	if(ret < 0)
@@ -41,7 +41,7 @@ inline int CData::SetFilter()
  *函数参数：无
  *函数返回值：无
  */
-inline void CData::CloseDataOrigin()
+inline void CDataCollection::CloseDataOrigin()
 {
 	pcap_close(this->m_pHandle);		//关闭文件
 }
@@ -51,7 +51,7 @@ inline void CData::CloseDataOrigin()
  *函数参数：无
  *函数返回值：无
  */
-void CData::DataCollection()
+void CDataCollection::DataCollection()
 {
 	if(NULL == this->pPcapHandler)
 	{
@@ -65,7 +65,7 @@ void CData::DataCollection()
  *函数参数：path:数据来源	FiltratorStr:过滤器字符串
  *函数返回值：成功该函数不会返回  失败或者结束数据采集返回-1
  */
-int CData::Analyze(const char path[], const char FiltratorStr[])
+int CDataCollection::Analyze(const char path[], const char FiltratorStr[])
 {
 	int iRet = this->OpenDataOrigin(path);	//打开数据源
 	if(FAULT == iRet)

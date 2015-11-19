@@ -1,9 +1,10 @@
-﻿#ifndef _CDATAFROMNETPORT_H_
+﻿
+#ifndef _CDATAFROMNETPORT_H_
 #define _CDATAFROMNETPORT_H_
-#include "Data.h"
+#include "DataCollection.h"
 #include "Comm.h"
 
-class CDataFromNetPort:public CData
+class CDataFromNetPort:public CDataCollection
 {
 public:
 	/*打开网口*/

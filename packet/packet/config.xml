@@ -6,9 +6,8 @@
 			<Port></Port>
 		</Ports>
 		<Protocols>
-			<Protocol></Protocol>
+			<Protocol>tcp</Protocol>
 			<Protocol></Protocol>
 		</Protocols>
 	</Mainframe>
 </Root>
-

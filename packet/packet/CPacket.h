@@ -36,7 +36,7 @@ private:
 	ST_ethernet* 	m_pstEthernet;				// 链路层帧头
 	ST_ip* 		 	m_pstIp;						// IP头
 	ST_tcp*			m_pstTcp;					// TCP头
-	u_char* 			m_pszPacketData;			// 包内容
+	u_char* 		m_pszPacketData;			// 包内容
 	int				m_iPacketDataLen;			// 包内容长度
 };
 
