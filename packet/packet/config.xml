@@ -1,0 +1,14 @@
+﻿<Root>
+	<NetPort>eth0</NetPort>
+	<Mainframe>
+		<Ip></Ip>
+		<Ports>
+			<Port></Port>
+		</Ports>
+		<Protocols>
+			<Protocol></Protocol>
+			<Protocol></Protocol>
+		</Protocols>
+	</Mainframe>
+</Root>
+
